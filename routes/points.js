@@ -15,8 +15,9 @@ router.get('/points', async (req, res) => {
 
 
 router.patch('/bootcampers/:id', async function (req, res) {
+    const ID = req.params.id
     const updatePoints = req.body
   
-    const updatedPoints = await updatePointHandler(points, ID)
+    const updatedPoints = await updatePointHandler(updatePoints, ID)
     res.status(200).json({success: true, payload: updatedPoints})
 })

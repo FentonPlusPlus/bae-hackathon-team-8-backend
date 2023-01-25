@@ -8,8 +8,9 @@ export async function getPoints() {
   }
 
 
-  export async function updatePointHandler(points, ID) {
-  
+  export async function updatePointHandler(pointsObject, ID) {
+    const points = pointsObject.points
+    console.log(points)
     const AddedPoints = await pool.query (`UPDATE points SET points=$1 WHERE id=$2 RETURNING *;`,[points, ID])
     const AddedPointObject = AddedPoints.rows
     return AddedPoints.rows
