@@ -3,7 +3,7 @@ export const router = express.Router()
 
 import {
     getPoints,
-    updatedPointHandler
+    updatePointHandler
 } from "../models/points.js"
 
 
